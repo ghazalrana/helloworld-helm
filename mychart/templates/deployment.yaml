@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mychart.fullname" . }}
+  labels:
+    {{- include "mychart.labels" . | nindent 4 }}
+spec:
+# You will not be able to change the hard coded value of the key at the deploy-time.If you want 
+# configure/override the value at the deploy-time, you have to create a variable in values.yaml file
+# and use that variable here [ like  .Values.<variable-name> ] 
+
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "mychart.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "mychart.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+# This configuration is fine if your application is listening on port 80. What If you relplace the image
+# at the deploy-time and that application is listening on port other than 80? You will not be able to 
+# override port at the deploy-time. Replace the hard-coded port with {{ .Values.ports.containerPort }}
+              containerPort: {{ .Values.ports.containerPort }}
+              protocol: TCP
