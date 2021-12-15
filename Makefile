@@ -2,8 +2,8 @@
 # MAINTAINER: Steve Sloka <steve@stevesloka.com>
 # If you update this image please bump the tag value before pushing.
 
-TAG = 1.10
-PREFIX = upmcenterprises
+TAG = 1.8
+PREFIX = gzlkhan
 
 BIN = registry-creds
 

@@ -1,0 +1,4 @@
+k8s.io/client-go v0.0.0-20170613204159-668d7ca6dcbe h1:gMPSa+QLLYvl3cOs/7Evhjmy8MJwWPJ+1ahSPUyzzTw=
+k8s.io/client-go v0.0.0-20170613204159-668d7ca6dcbe/go.mod h1:7vJpHMYJwNQCWgzmNV+VYUl1zCObLyodBc8nIyt8L5s=
+k8s.io/client-go v0.0.0-20210225122429-32a6ebfbede3 h1:+ipiBpRIPnyxyPk7QrlRNTw6hvUSg2+0eHUAutMDGRY=
+k8s.io/client-go v0.0.0-20210225122429-32a6ebfbede3/go.mod h1:OmM68YRko3DQ0sjlnWxzjQF9lcSLHJXuGMTo23rc7wI=
